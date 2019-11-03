@@ -23,6 +23,9 @@ public class Booking {
     @Column(name = "start_time")
     private LocalTime startTime;
 
+    @Column(name = "end_time")
+    private LocalTime endTime;
+
 
 //    @JsonFormat(pattern="yyyy-MM-dd")
 //    private LocalDate birthday;
@@ -30,11 +33,12 @@ public class Booking {
 
 
 //    public Booking(String startTime, String endTime, String date, int numOfGuests) {
-        public Booking(LocalDate date, LocalTime startTime) {
+        public Booking(LocalDate date, LocalTime startTime, LocalTime endTime) {
 //        this.startTime = startTime;
 //        this.endTime = endTime;
         this.date = date;
         this.startTime = startTime;
+        this.endTime = endTime;
 //        this.numOfGuests = numOfGuests;
 
     }
