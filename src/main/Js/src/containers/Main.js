@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
 import NewBooking from '../components/NewBookingForm';
+import Button from '../components/Button';
 
 class Main extends Component {
 
@@ -14,6 +15,7 @@ class Main extends Component {
         return(
             <Router>
                 <Fragment>
+                    <Button/>
                     <NavBar/>
                     <Switch>
                         <Route path="/new-booking" component={BookingContainer}/>
