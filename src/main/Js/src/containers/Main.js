@@ -2,12 +2,13 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
+import NewBooking from '../components/NewBookingForm';
 
 class Main extends Component {
 
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
     render() {
         return(
@@ -15,7 +16,7 @@ class Main extends Component {
                 <Fragment>
                     <NavBar/>
                     <Switch>
-                        <Route exact path="/new-booking" Component={BookingContainer}/>
+                        <Route path="/new-booking" component={BookingContainer}/>
                     </Switch>
                 </Fragment>
             </Router>

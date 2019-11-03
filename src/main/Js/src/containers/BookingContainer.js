@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import NewBookingForm from '../components/NewBookingForm';
 class BookingContainer extends Component {
 
     constructor(props) {
@@ -21,7 +21,9 @@ class BookingContainer extends Component {
     render() {
         return(
             <div>
-                {this.state.data.startTime}
+                <NewBookingForm/>
+                <p>{this.state.data[0].startTime}</p>
+                <p>booking</p>
             </div>
         )
     }
