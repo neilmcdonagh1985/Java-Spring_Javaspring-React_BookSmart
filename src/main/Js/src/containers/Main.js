@@ -2,7 +2,6 @@ import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
-import NewBooking from '../components/NewBookingForm';
 import Button from '../components/Button';
 
 class Main extends Component {

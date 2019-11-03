@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import NewBookingForm from '../components/NewBookingForm';
+
+
 class BookingContainer extends Component {
 
     constructor(props) {
@@ -22,8 +24,6 @@ class BookingContainer extends Component {
         return(
             <div>
                 <NewBookingForm/>
-                <p>{this.state.data[0].startTime}</p>
-                <p>booking</p>
             </div>
         )
     }
