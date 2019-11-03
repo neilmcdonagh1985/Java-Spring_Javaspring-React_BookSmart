@@ -2,7 +2,10 @@ import React from 'react';
 
 const NewBooking = () => (
 
-    <div>
+    <form className="booking-form">
+        <label></label>
+        <input>
+        </input>
         <p>booking form</p>
 
     </div>
