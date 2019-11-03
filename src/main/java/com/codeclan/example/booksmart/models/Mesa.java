@@ -1,10 +1,23 @@
 package com.codeclan.example.booksmart.models;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "mesas")
 public class Mesa {
 
-    private String name;
-    private int capacity;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "capacity")
+    private int capacity;
+
 
     public Mesa(String name, int capacity) {
         this.name = name;
