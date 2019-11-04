@@ -6,6 +6,7 @@ const NavBar = () => (
     <ul>
         <li>
             <Link to='/new-booking'>New Booking</Link>
+            <Link to='/customers'>Customers</Link>
         </li>
     </ul>
 

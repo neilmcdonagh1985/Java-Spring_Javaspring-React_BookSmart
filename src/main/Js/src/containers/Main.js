@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
 import Button from '../components/Button';
+import CustomersList from '../components/CustomersList';
 
 class Main extends Component {
 
@@ -14,10 +15,13 @@ class Main extends Component {
         return(
             <Router>
                 <Fragment>
-                    <Button/>
+                    {/* <Button/> */}
                     <NavBar/>
                     <Switch>
                         <Route path="/new-booking" component={BookingContainer}/>
+                    </Switch>
+                    <Switch>
+                        <Route path="/customers" component={CustomersList}/>
                     </Switch>
                 </Fragment>
             </Router>
