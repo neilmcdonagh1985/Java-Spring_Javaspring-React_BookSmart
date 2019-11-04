@@ -9,11 +9,11 @@ class CustomersList extends Component {
         }
     }
 
-    componentDidMount() {
-        fetch('http://localhost:3000/customers')
-            .then(response => response.json())
-            .then(data => this.setState({ data }));
-    }
+    // componentDidMount() {
+    //     fetch('http://localhost:8080/customers')
+    //         .then(response => response.json())
+    //         .then(data => this.setState({data: [_embedded].customers}));
+    // }
 
     render() {
         return (

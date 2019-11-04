@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ButtonExampleButton from './Button';
+
 
 class NewBooking extends Component {
 
@@ -67,6 +69,9 @@ class NewBooking extends Component {
         console.log('time',this.state.startTime)
         return (
             <form className="booking-form">
+                <div className="form-title">
+                    <h3>New Booking</h3>
+                </div>
                 <DatePicker
                     selected={this.state.date}
                     onChange={this.handleChangeDate}
@@ -80,7 +85,13 @@ class NewBooking extends Component {
                     timeCaption="Time"
                     dateFormat="h:mm aa"
                 />
-                <h3>Customer's Details</h3>
+                <button>Check Availability</button>
+                <div className="form-title">
+                    <h3>Available Tables</h3>
+                </div>
+                <div className="form-title">
+                    <h3>Customer's Details</h3>
+                </div>
                 <label>Name:</label>
                 <input 
                     type="text" 

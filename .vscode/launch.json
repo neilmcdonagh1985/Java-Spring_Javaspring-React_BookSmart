@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BooksmartApplication",
+            "request": "launch",
+            "mainClass": "com.codeclan.example.booksmart.BooksmartApplication",
+            "projectName": "booksmart"
+        }
+    ]
+}

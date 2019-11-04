@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NewBookingForm from '../components/NewBookingForm';
+import '../style/style.css';
 
 
 class BookingContainer extends Component {
@@ -13,7 +14,7 @@ class BookingContainer extends Component {
 
     render() {
         return(
-            <div>
+            <div className="booking-cont">
                 <NewBookingForm/>
             </div>
         )
