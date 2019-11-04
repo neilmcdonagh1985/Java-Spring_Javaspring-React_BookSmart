@@ -4,8 +4,7 @@ import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
 import Button from '../components/Button';
 import CustomersList from '../components/CustomersList';
-import '../style/style.css';
-
+// import '../public/style/style.css';
 class Main extends Component {
 
     // constructor(props) {
