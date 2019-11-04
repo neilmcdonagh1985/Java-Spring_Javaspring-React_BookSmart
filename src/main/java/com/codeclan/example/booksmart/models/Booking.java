@@ -35,6 +35,11 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    @JsonIgnoreProperties("booking")
+    @ManyToOne
+    @JoinColumn(name = "mesa_id", nullable = false)
+    private Mesa mesa;
+
 
 //    @JsonFormat(pattern="yyyy-MM-dd")
 //    private LocalDate birthday;
@@ -42,12 +47,13 @@ public class Booking {
 
 
 //    public Booking(String startTime, String endTime, String date, int numOfGuests) {
-        public Booking(LocalDate date, LocalTime startTime, LocalTime endTime, int numOfGuests, Customer customer) {
+        public Booking(LocalDate date, LocalTime startTime, LocalTime endTime, int numOfGuests, Customer customer, Mesa mesa) {
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.numOfGuests = numOfGuests;
         this.customer = customer;
+        this.mesa = mesa;
 //        this.numOfGuests = numOfGuests;
 
     }
@@ -101,6 +107,14 @@ public class Booking {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Mesa getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
     }
 
     //
