@@ -21,23 +21,23 @@ public class Booking {
     @Column(name = "date")
     private LocalDate date;
 
-    @Column(name = "start_time")
+    @Column(name = "startTime")
     private LocalTime startTime;
 
-    @Column(name = "end_time")
+    @Column(name = "endTime")
     private LocalTime endTime;
 
-    @Column(name = "number_of_guests")
+    @Column(name = "numberOfGuests")
     private int numOfGuests;
 
     @JsonIgnoreProperties("booking")
     @ManyToOne
-    @JoinColumn(name = "customer_id", nullable = false)
+    @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
 
     @JsonIgnoreProperties("booking")
     @ManyToOne
-    @JoinColumn(name = "mesa_id", nullable = false)
+    @JoinColumn(name = "mesaId", nullable = false)
     private Mesa mesa;
 
 

@@ -18,7 +18,7 @@ public class Customer {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "phone_number")
+    @Column(name = "phoneNumber")
     private String phoneNumber;
 
     @Column(name = "email")
