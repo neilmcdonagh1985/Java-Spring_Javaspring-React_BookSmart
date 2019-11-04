@@ -51,13 +51,13 @@ public class DataLoader implements ApplicationRunner {
         LocalDate date = LocalDate.of(2017, Month.AUGUST, 23);
 
 
-        Booking booking1 = new Booking(date, time1, endTime1, 3);
+        Booking booking1 = new Booking(date, time1, endTime1, 3, customer1);
         bookingRepository.save(booking1);
 
-        Booking booking2 = new Booking(date, time2, endTime2, 4);
+        Booking booking2 = new Booking(date, time2, endTime2, 4, customer2);
         bookingRepository.save(booking2);
 
-        Booking booking3 = new Booking(date, time1, endTime2, 5);
+        Booking booking3 = new Booking(date, time1, endTime2, 5, customer3);
         bookingRepository.save(booking3);
 
 
