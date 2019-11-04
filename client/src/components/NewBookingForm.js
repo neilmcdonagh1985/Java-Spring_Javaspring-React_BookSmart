@@ -14,7 +14,7 @@ class NewBooking extends Component {
             name: "",
             phoneNumber: "",
             email: "",
-            numberOfGuests: null
+            numberOfGuests: ""
         };
 
         this.handleNameChange = this.handleNameChange.bind(this);

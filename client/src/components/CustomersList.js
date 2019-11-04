@@ -1,29 +1,26 @@
 import React, {Component} from 'react';
+import CustomerDetail from './CustomerDetail';
 
 class CustomersList extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            customersData: []
         }
     }
 
-    // componentDidMount() {
-    //     fetch('http://localhost:8080/customers')
-    //         .then(response => response.json())
-    //         .then(data => this.setState({data: [_embedded].customers}));
-    // }
+    componentDidMount() {
+        fetch('http://localhost:8080/customers')
+            .then(response => response.json())
+            .then(jasonData => this.setState({customersData: jasonData['_embedded'].customers}));
+    }
 
     render() {
+
         return (
             <div>
-                <ul>
-                    <li>
-                        {/* {this.state.data.name} */}
-                    </li>
-                </ul>
-                <p>customer's list</p>
+                <CustomerDetail customers={this.state.customersData}/>
             </div>
             
         )

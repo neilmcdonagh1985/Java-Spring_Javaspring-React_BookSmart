@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import NewBookingForm from '../components/NewBookingForm';
-import '../style/style.css';
-
+// import '../../public/style/style';
 
 class BookingContainer extends Component {
 
