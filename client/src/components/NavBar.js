@@ -5,12 +5,19 @@ import {Link} from 'react-router-dom';
 const NavBar = () => (
 
     <ul className="nav-bar">
-        <li>
-            <Link to='/new-booking'>New Booking</Link>
-            <Link to='/customers'>Customers</Link>
-        </li>
-    </ul>
-
+            <li>
+                <Link to='/bookings'>Calendar</Link>
+            </li>
+            <li>
+                <Link to='/new-booking'>New Booking</Link>
+            </li>
+            <li>
+                <Link to='/edit-booking'>Edit Booking</Link>
+            </li>
+            <li>
+                <Link to='/customers'>Customers</Link>
+            </li>
+        </ul>
 )
 
 export default NavBar;
