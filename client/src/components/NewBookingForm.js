@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Button from './Button';
+// import Button from './Button';
 
 
 class NewBooking extends Component {
@@ -96,67 +96,92 @@ class NewBooking extends Component {
                 <div className="form-title">
                     <h3>New Booking</h3>
                 </div>
-                <DatePicker
-                    selected={this.state.date}
-                    onChange={this.handleChangeDate}
-                />
-                <DatePicker
-                    selected={this.state.startTime}
-                    onChange={startTime => this.handleStartTime(startTime)}
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={15}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                />
-                <DatePicker
-                    selected={this.state.endTime}
-                    onChange={endTime => this.handleEndTime(endTime)}
-                    showTimeSelect
-                    showTimeSelectOnly
-                    timeIntervals={15}
-                    timeCaption="Time"
-                    dateFormat="h:mm aa"
-                />
-                <button>Check Availability</button>
+                <div className="date-time-picker">
+                    <div className="label-picker">
+                        <label>Select date:</label>
+                        <DatePicker
+                            className="date-picker"
+                            selected={this.state.date}
+                            onChange={this.handleChangeDate}
+                        />
+                    </div>
+                    
+                    <div className="label-picker">
+                        <label>Select start time:</label>
+                    <DatePicker
+                        className="date-picker"
+                        selected={this.state.startTime}
+                        onChange={startTime => this.handleStartTime(startTime)}
+                        showTimeSelect
+                        showTimeSelectOnly
+                        timeIntervals={15}
+                        timeCaption="Time"
+                        dateFormat="h:mm aa"
+                    />
+                    </div>
+
+                    <div className="label-picker">
+                        <label>Select end time:</label>
+                    <DatePicker
+                        className="date-picker"
+                        selected={this.state.endTime}
+                        onChange={endTime => this.handleEndTime(endTime)}
+                        showTimeSelect
+                        showTimeSelectOnly
+                        timeIntervals={15}
+                        timeCaption="Time"
+                        dateFormat="h:mm aa"
+                    />
+                    </div>
+                    <button>Check Availability</button>
+                </div>
+                
                 <div className="form-title">
                     <h3>Available Tables</h3>
                 </div>
+
                 <div className="form-title">
                     <h3>Customer's Details</h3>
                 </div>
-                <label>Name:</label>
-                <input 
-                    type="text" 
-                    placeholder="Enter customer's name" 
-                    value={this.state.name}
-                    onChange={this.handleNameChange}>
-                </input>
-                <label>Phone Number:</label>
-                <input 
-                    type="text" 
-                    placeholder="Enter customer's phone number" 
-                    value={this.state.phoneNumber}
-                    onChange={this.handlePhoneChange}>
-                </input>
-                <label>E-mail:</label>
-                <input 
-                    type="text" 
-                    placeholder="Enter customer's e-mail" 
-                    value={this.state.email}
-                    onChange={this.handleEmailChange}>
-                </input>
-                <label>Number of guests:</label>
-                <input 
-                    type="number" 
-                    placeholder="Enter number of guests" 
-                    value={this.state.numberOfGuests}
-                    onChange={this.handleGuestsChange}>
-                </input>
-                <button  onClick={(event) => { if (window.confirm('confirm?')) this.submitItem(event) } }>
 
-                Confirm Booking Details?
-                </button>
+                <div className="cust-form">
+                    <label>Name:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Enter customer's name" 
+                        value={this.state.name}
+                        onChange={this.handleNameChange}>
+                    </input>
+                    <label>Phone Number:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Enter customer's phone number" 
+                        value={this.state.phoneNumber}
+                        onChange={this.handlePhoneChange}>
+                    </input>
+                    <label>E-mail:</label>
+                    <input 
+                        type="text" 
+                        placeholder="Enter customer's e-mail" 
+                        value={this.state.email}
+                        onChange={this.handleEmailChange}>
+                    </input>
+                    <label>Number of guests:</label>
+                    <input 
+                        type="number" 
+                        placeholder="Enter number of guests" 
+                        value={this.state.numberOfGuests}
+                        onChange={this.handleGuestsChange}>
+                    </input>
+                </div>
+                <div className="butt-book-form">
+                    <button
+                        
+                        onClick={(event) => { if (window.confirm('confirm?')) this.submitItem(event) } }>
+                        Confirm Booking Details?
+                    </button>
+                </div>
+                
             </form>
         );
     }
