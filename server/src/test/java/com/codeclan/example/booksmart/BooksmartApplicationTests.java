@@ -45,7 +45,7 @@ class BooksmartApplicationTests {
 	@Test
 	public void findBookingsByDate(){
 		LocalDate date = LocalDate.of(2017, Month.AUGUST, 23);
-		List<Booking> found = bookingRepository.findBookingsBydate(date);
+		List<Booking> found = bookingRepository.findBookingsByDate(date);
 		assertEquals(4, found.size());
 	}
 
