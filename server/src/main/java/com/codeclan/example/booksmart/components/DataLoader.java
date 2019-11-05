@@ -36,6 +36,9 @@ public class DataLoader implements ApplicationRunner {
         Mesa mesa2 = new Mesa("Table2", 4);
         mesaRepository.save(mesa2);
 
+        Mesa mesa3 = new Mesa("Table3", 4);
+        mesaRepository.save(mesa3);
+
 
 
         Customer customer1 = new Customer("Neil", "07562826673", "neil@hotmail.com" );
@@ -54,22 +57,23 @@ public class DataLoader implements ApplicationRunner {
         LocalTime time2 = LocalTime.of(10, 45, 00);
         LocalTime endTime1 = LocalTime.of(12, 30, 00);
         LocalTime endTime2 = LocalTime.of(13, 15, 00);
-        LocalDate date = LocalDate.of(2017, Month.AUGUST, 23);
+        LocalDate date1 = LocalDate.of(2019, Month.NOVEMBER, 05);
+        LocalDate date2 = LocalDate.of(2019, Month.NOVEMBER, 07);
 
 
-        Booking booking1 = new Booking(date, time1, endTime1, 3, customer1, mesa1);
+        Booking booking1 = new Booking(date1, time1, endTime1, 3, customer1, mesa1);
         bookingRepository.save(booking1);
 
-        Booking booking2 = new Booking(date, time2, endTime2, 4, customer2, mesa2);
+        Booking booking2 = new Booking(date2, time2, endTime2, 4, customer2, mesa2);
         bookingRepository.save(booking2);
 
-        Booking booking3 = new Booking(date, time1, endTime2, 5, customer3, mesa1);
+        Booking booking3 = new Booking(date1, time1, endTime2, 5, customer3, mesa1);
         bookingRepository.save(booking3);
 
-        Booking booking4 = new Booking(date, time1, endTime2, 5, customer3, mesa1);
+        Booking booking4 = new Booking(date2, time1, endTime2, 5, customer3, mesa1);
         bookingRepository.save(booking4);
 
-        
+
 
 
 
