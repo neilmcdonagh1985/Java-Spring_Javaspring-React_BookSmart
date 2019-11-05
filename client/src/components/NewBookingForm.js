@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import ButtonExampleButton from './Button';
+import Button from './Button';
 
 
 class NewBooking extends Component {
@@ -11,6 +11,7 @@ class NewBooking extends Component {
         this.state = {
             date: new Date(),
             startTime: new Date(),
+            endTime: new Date(),
             name: "",
             phoneNumber: "",
             email: "",
@@ -23,6 +24,22 @@ class NewBooking extends Component {
         this.handleGuestsChange = this.handleGuestsChange.bind(this);
         // this.submitItem = this.submitItem.bind(this);
     }
+
+    formatDate(date) {
+        const d = new Date(date)
+        let month = '' + d.getMonth()
+        let day = '' + d.getDate()
+        let year = d.getFullYear()
+        return [year, month, day].join('-');
+    }
+
+    formatTime(time) {
+        const d = new Date(time)
+        let hour = '' + (d.getHours())
+        let minutes = '' + d.getMinutes()
+        let seconds = d.getSeconds()
+        return [hour, minutes, seconds].join(':');
+    }
     
     
     handleChangeDate = date => {
@@ -31,9 +48,15 @@ class NewBooking extends Component {
         });
     };
 
-    setStartTime = time => {
+    handleStartTime = startTime => {
         this.setState({
-            startTime: time
+            startTime: startTime
+        });
+    };
+
+    handleEndTime = endTime => {
+        this.setState({
+            endTime: endTime
         });
     };
 
@@ -65,7 +88,8 @@ class NewBooking extends Component {
     // }
     
     render() {
-        console.log('date',this.state.date)
+        console.log('date',this.formatDate(this.state.date))
+        console.log('time format',this.formatTime(this.state.startTime))
         console.log('time',this.state.startTime)
         return (
             <form className="booking-form">
@@ -78,7 +102,16 @@ class NewBooking extends Component {
                 />
                 <DatePicker
                     selected={this.state.startTime}
-                    onChange={time => this.setStartTime(time)}
+                    onChange={startTime => this.handleStartTime(startTime)}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    timeCaption="Time"
+                    dateFormat="h:mm aa"
+                />
+                <DatePicker
+                    selected={this.state.endTime}
+                    onChange={endTime => this.handleEndTime(endTime)}
                     showTimeSelect
                     showTimeSelectOnly
                     timeIntervals={15}

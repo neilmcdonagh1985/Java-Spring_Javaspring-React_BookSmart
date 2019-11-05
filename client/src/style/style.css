@@ -33,19 +33,16 @@ li:hover {
     font-weight: 700;
 }
 
-.App {
-    /* background-color: blue; */
-}
-
-.index {
-    background-color: brown;
-}
-
 .body {
     background-color: #e0e7e9;
 }
 
 .form-title {
     background-color: #6ebacf;
+    margin-top: 20px;
 }
 
+.booking-form {
+    margin-top: 200 px;
+
+}
