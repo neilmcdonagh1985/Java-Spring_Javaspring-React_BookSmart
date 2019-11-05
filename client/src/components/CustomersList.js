@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CustomerDetail from './CustomerDetail';
+import CustomersListItem from './CustomersListItem';
 
 class CustomersList extends Component {
 
@@ -19,8 +19,9 @@ class CustomersList extends Component {
     render() {
 
         return (
-            <div>
-                <CustomerDetail customers={this.state.customersData}/>
+            <div className="cust-list">
+                <CustomersListItem customers={this.state.customersData}/>
+                
             </div>
             
         )

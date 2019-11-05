@@ -8,8 +8,10 @@
     background-color: white;
     box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    width: 70%;
+    width: 90%;
     height: 60px;
+    top:0;
+    z-index: 9999999;
 }
 
 ul.nav-bar {
@@ -33,23 +35,59 @@ li:hover {
     font-weight: 700;
 }
 
-.App {
-    /* background-color: blue; */
-}
-
-.index {
-    background-color: brown;
-}
-
 .body {
     background-color: #e0e7e9;
 }
 
 .form-title {
     background-color: #6ebacf;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.booking-form {
+    margin-top: 100px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cust-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cust-form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.date-time-picker {
+    display: flex;
+    justify-content: space-around;
 }
 
 .calendar {
     margin: 100px auto;
 }
 
+.label-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.butt-book-form {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.cust-list {
+    
+}
