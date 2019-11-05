@@ -33,8 +33,6 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.bookings = new ArrayList<Booking>();
-
-
     }
 
     public Customer() {}
