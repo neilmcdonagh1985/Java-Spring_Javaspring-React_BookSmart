@@ -27,7 +27,7 @@ class NewBooking extends Component {
 
     formatDate(date) {
         const d = new Date(date)
-        let month = '' + d.getMonth()
+        let month = '' + (d.getMonth() +1)
         let day = '' + d.getDate()
         let year = d.getFullYear()
         return [year, month, day].join('-');

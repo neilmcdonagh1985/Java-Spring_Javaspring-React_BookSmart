@@ -21,6 +21,7 @@ class CustomersList extends Component {
         return (
             <div className="cust-list">
                 <CustomersListItem customers={this.state.customersData}/>
+                
             </div>
             
         )
