@@ -13,7 +13,7 @@ class CustomersList extends Component {
     componentDidMount() {
         fetch('http://localhost:8080/customers')
             .then(response => response.json())
-            .then(jasonData => this.setState({customersData: jasonData['_embedded'].customers}));
+            .then(jsonData => this.setState({customersData: jsonData['_embedded'].customers}));
     }
 
     render() {

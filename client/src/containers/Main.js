@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
 import Button from '../components/Button';
 import CustomersList from '../components/CustomersList';
+import Calendar from '../components/Calendar';
 // import '../public/style/style.css';
 
 class Main extends Component {
@@ -19,7 +20,7 @@ class Main extends Component {
                     {/* <Button/> */}
                     <NavBar />
                     <Switch>
-                        {/* <Route path="/bookings" component={Bookings}/> */}
+                        <Route path="/bookings" component={Calendar}/>
                         <Route path="/new-booking" component={BookingContainer} />
                         {/* <Route path="/edit-booking" component={EditBooking}/> */}
                         <Route path="/customers" component={CustomersList} />
