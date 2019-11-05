@@ -16,10 +16,10 @@ public class CustomerController {
     @Autowired
     CustomerRepository customerRepository;
 
-    @GetMapping
-    public List<Customer> getAllCustomers(){
-        return customerRepository.findAll();
-    }
+//    @GetMapping
+//    public List<Customer> getAllCustomers(){
+//        return customerRepository.findAll();
+//    }
 
     @GetMapping(value = "/bookings/customer-visits")
     public List<Customer> findAllCustomersOrderedByBookingSize(){

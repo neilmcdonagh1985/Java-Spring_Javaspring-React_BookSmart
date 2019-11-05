@@ -16,8 +16,8 @@ public class MesaController {
     @Autowired
     MesaRepository mesaRepository;
 
-    @GetMapping
-    public List<Mesa> getALlMesas(){
-        return mesaRepository.findAll();
-    }
+//    @GetMapping
+//    public List<Mesa> getALlMesas(){
+//        return mesaRepository.findAll();
+//    }
 }
