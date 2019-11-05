@@ -30,12 +30,12 @@ public class Booking {
     @Column(name = "numberOfGuests")
     private int numOfGuests;
 
-    @JsonIgnoreProperties("booking")
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
 
-    @JsonIgnoreProperties("booking")
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name = "mesaId", nullable = false)
     private Mesa mesa;

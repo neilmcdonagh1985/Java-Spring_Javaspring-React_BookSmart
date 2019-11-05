@@ -2,9 +2,8 @@ import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import BookingContainer from './BookingContainer';
-import Button from '../components/Button';
 import CustomersList from '../components/CustomersList';
-// import '../public/style/style.css';
+import '../style/style.css';
 
 class Main extends Component {
 
@@ -16,7 +15,6 @@ class Main extends Component {
         return (
             <Router>
                 <Fragment>
-                    {/* <Button/> */}
                     <NavBar />
                     <Switch>
                         {/* <Route path="/bookings" component={Bookings}/> */}
