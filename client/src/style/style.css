@@ -1,17 +1,38 @@
 .booking-cont {
-    background-color: e0e7e9;
+    background-color: #e0e7e9;
 }
 
 .nav-bar {
-    background-color: #354649;
+    position: fixed;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 2px 24px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 90%;
+    height: 60px;
+    top:0;
+    z-index: 9999999;
 }
 
-.App {
-    /* background-color: blue; */
+ul.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
 }
 
-.index {
-    background-color: brown;
+li {
+    height: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 0 3px;
+}
+
+li:hover {
+    border-top: 4px solid #7bdad5;
+    font-weight: 700;
 }
 
 .body {
@@ -19,6 +40,50 @@
 }
 
 .form-title {
-    background-color: #a3c6c4;
+    background-color: #6ebacf;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+.booking-form {
+    margin-top: 100px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cust-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cust-form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.date-time-picker {
+    display: flex;
+    justify-content: space-around;
+}
+
+.label-picker {
+    display: flex;
+    flex-direction: column;
+}
+
+.butt-book-form {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+}
+
+.cust-list {
+    
+}
