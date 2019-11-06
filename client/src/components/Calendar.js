@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from "react-dom";
 import Paper from "@material-ui/core/Paper";
 import { ViewState } from "@devexpress/dx-react-scheduler";
 import { Scheduler, Appointments, DayView } from "@devexpress/dx-react-scheduler-material-ui";
@@ -52,7 +51,6 @@ class Calendar extends React.PureComponent {
                         selected={this.state.calendarDate}
                         onChange={this.handleChangeDate}
                     />
-               
                     <div className="bookings-calendar">
                     <MuiThemeProvider theme={theme}>
                         <Paper>

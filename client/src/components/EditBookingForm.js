@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { isThisISOWeek } from 'date-fns/esm';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -9,7 +8,7 @@ class EditBookingForm extends Component {
         super(props);
         const { selectedBooking } = props
 
-        this.state= {
+        this.state = {
             date: new Date(selectedBooking.date),
             startTime: new Date(selectedBooking.date + 'T' + selectedBooking.startTime),
             endTime: new Date(selectedBooking.date + 'T' + selectedBooking.endTime),
@@ -92,9 +91,8 @@ class EditBookingForm extends Component {
 
     render() {
         if (!this.props.selectedBooking) return null;
-        return(
-             <form className="booking-form">
-
+        return (
+            <form className="booking-form">
                 <div className="date-time-picker">
                     <div className="label-picker">
                         <label>Date:</label>
@@ -104,7 +102,6 @@ class EditBookingForm extends Component {
                             onChange={startDate => this.handleChangeDate(startDate)}
                         />
                     </div>
-
                     <div className="label-picker">
                         <label>Start time:</label>
                         <DatePicker
@@ -118,7 +115,6 @@ class EditBookingForm extends Component {
                             dateFormat="h:mm aa"
                         />
                     </div>
-
                     <div className="label-picker">
                         <label>End time:</label>
                         <DatePicker
@@ -133,9 +129,7 @@ class EditBookingForm extends Component {
                         />
                     </div>
                 </div>
-
                 <div className="cust-form">
-
                     <label>Number of guests:</label>
                     <input
                         type="number"
@@ -146,14 +140,11 @@ class EditBookingForm extends Component {
                     </input>
                 </div>
                 <div className="butt-book-form" >
-                    <button onClick={ (event) => this.submitBookingChanges(event) }>Submit changes</button>
+                    <button onClick={(event) => this.submitBookingChanges(event)}>Submit changes</button>
                 </div>
             </form>
-          
-            
-            )
+        )
     }
-
 }
 
 export default EditBookingForm;

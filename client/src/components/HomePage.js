@@ -13,7 +13,7 @@ const HomePage = () => (
                     <input type="text" placeholder="Username" /><br></br>
                     <label>Staff Password: </label>
                     <input type="text" placeholder="Password" />
-               </form>
+                </form>
             </div>
         </div>
     </div>

@@ -25,8 +25,8 @@ class EditBookingContainer extends Component {
             },
             body: JSON.stringify(updatedBookingDetail),
         })
-        .then(res => res.json())
-        .then(updatedBooking => this.props.onBookingUpdated(updatedBooking));
+            .then(res => res.json())
+            .then(updatedBooking => this.props.onBookingUpdated(updatedBooking));
     }
 
     render() {
@@ -35,7 +35,7 @@ class EditBookingContainer extends Component {
                 <div>
                     {this.state.selectedBooking && <EditBookingForm selectedBooking={this.state.selectedBooking} onBookingEdit={this.handleBookingEdit} key={this.state.selectedBooking.id} />}
                 </div>
-                
+
                 <table className="cust-table">
                     <thead>
                         <tr>
@@ -58,13 +58,11 @@ class EditBookingContainer extends Component {
                                 <td >{booking.numOfGuests}</td>
                                 <td >{booking[`_embedded`].mesa.name}</td>
                                 <td>
-                                <button onClick={this.handleSelect} value={i}>Edit</button>                                </td>
+                                    <button onClick={this.handleSelect} value={i}>Edit</button>                                </td>
                             </tr>
                         )}
                     </tbody>
                 </table>
-                
-            
             </Fragment>
         )
     }

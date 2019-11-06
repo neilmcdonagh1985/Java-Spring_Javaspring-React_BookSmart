@@ -51,7 +51,7 @@ li {
     font-size: 18px;
 }
 
-.table-display p:hover {
+.table-display li:hover {
     border-top: 4px solid #7bdad5;
     font-weight: 700;
     font-size: 20px;

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import TablesGrid from './TablesGrid';
 
 class NewBooking extends Component {
 
@@ -19,13 +18,11 @@ class NewBooking extends Component {
             tables: [],
             availableTables: []
         };
-
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handlePhoneChange = this.handlePhoneChange.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handleGuestsChange = this.handleGuestsChange.bind(this);
         this.handleClickTable = this.handleClickTable.bind(this);
-        // this.submitItem = this.submitItem.bind(this);
     }
 
     formatDate(date) {
@@ -48,7 +45,6 @@ class NewBooking extends Component {
         if (seconds.length < 2) { seconds = '0' + seconds }
         return [hour, minutes, seconds].join(':');
     }
-    
     
     handleChangeDate = date => {
         this.setState({
@@ -86,7 +82,6 @@ class NewBooking extends Component {
 
     handleClickTable(event) {
         this.setState({selectedTableId: event.target.value})
-
     }
 
     submitItem(event) {
@@ -123,8 +118,6 @@ class NewBooking extends Component {
             .then(jasonData => this.setState({tables: jasonData['_embedded'].mesas}));
     }
 
-
-    
     render() {
         console.log('date',this.formatDate(this.state.date))
         console.log('time format',this.formatTime(this.state.startTime))
@@ -179,24 +172,20 @@ class NewBooking extends Component {
                 </div>
 
                 <div className="table-display">
-                {/* <ul> */}
                     {
                         this.state.tables.map(table => {
                             return (
-                                    <p onClick={this.handleClickTable} key={table.id} value={table.id}>
+                                    <li onClick={this.handleClickTable} key={table.id} value={table.id}>
                                         {table.name}
-                                    </p>
+                                    </li>
                             )
                         })
                     }
-                {/* </ul> */}
-                    
                 </div>
 
                 <div className="form-title">
                     <h3>Customer's Details</h3>
                 </div>
-
                 <div className="cust-form">
                     <label>Name:</label>
                     <input 
@@ -229,17 +218,13 @@ class NewBooking extends Component {
                 </div>
                 <div className="butt-book-form">
                     <button
-                        
                         onClick={ (event) => this.submitItem(event) }>
-                        Confirm Booking Details?
+                        Confirm Booking?
                     </button>
                 </div>
-                
             </form>
         );
     }
-    
-
 }
-export default NewBooking;
 
+export default NewBooking;

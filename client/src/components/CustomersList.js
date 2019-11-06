@@ -19,16 +19,16 @@ class CustomersList extends Component {
     }
 
     handleEditCust(event) {
-        this.setState({ selectedCustomer: this.state.customersData[event.target.value]})
+        this.setState({ selectedCustomer: this.state.customersData[event.target.value] })
     }
 
     render() {
         return (
             <Fragment>
                 <div>
-                    {this.state.selectedCustomer && 
-                    <EditCustomer selectedCustomer={this.state.selectedCustomer} 
-                    key={this.state.selectedCustomer.id} />}
+                    {this.state.selectedCustomer &&
+                        <EditCustomer selectedCustomer={this.state.selectedCustomer}
+                            key={this.state.selectedCustomer.id} />}
                 </div>
                 <table className="cust-table">
                     <thead>
@@ -48,18 +48,15 @@ class CustomersList extends Component {
                                 <td >{customer.email}</td>
                                 <td >{customer.bookings.length}</td>
                                 <td>
-                                <button value={i} onClick={this.handleEditCust}>Edit</button>
+                                    <button value={i} onClick={this.handleEditCust}>Edit</button>
                                 </td>
                             </tr>
                         )}
                     </tbody>
                 </table>
-                
             </Fragment>
         );
-    } 
-        
-    
+    }
 }
 
 export default CustomersList;

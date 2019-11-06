@@ -4,7 +4,6 @@ const TablesGrid = ({tables}) => {
 
     handleClickTable(event) {
         const selectedTable = event.target.value;
-
     };
 
    return tables.map((table) => {
@@ -15,4 +14,5 @@ const TablesGrid = ({tables}) => {
        )
    });
 }
+
 export default TablesGrid;

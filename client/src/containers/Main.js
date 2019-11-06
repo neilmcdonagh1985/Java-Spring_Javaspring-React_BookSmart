@@ -58,7 +58,7 @@ class Main extends Component {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route path="/bookings" render={() => <Calendar bookingsData={this.state.data} />} />
-                        <Route path="/new-booking" render={() => <BookingContainer onNewBookingAdded={this.addNewBooking} /> } />
+                        <Route path="/new-booking" render={() => <BookingContainer onNewBookingAdded={this.addNewBooking} />} />
                         <Route path="/edit-booking" render={() => <EditBookingContainer bookings={this.state.data} onBookingUpdated={this.updateBooking} />} />
                         <Route path="/customers" component={CustomersList} />
                     </Switch>
@@ -66,7 +66,6 @@ class Main extends Component {
             </Router>
         )
     }
-
 }
 
 export default Main;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class EditCustomer extends Component {
-    
+
     constructor(props) {
         super(props);
         const { selectedCustomer } = props
@@ -13,35 +13,34 @@ class EditCustomer extends Component {
         }
     }
 
-    render () {
+    render() {
         if (!this.props.selectedCustomer) return null;
-        return(
+        return (
             <form className="edit-cust-form">
                 <label>Name:</label>
-                    <input 
-                        type="text" 
-                        placeholder="Enter customer's name" 
-                        value={this.state.name}
-                        onChange={this.handleNameChange}>
-                    </input>
-                    <label>Phone Number:</label>
-                    <input 
-                        type="text" 
-                        placeholder="Enter customer's phone number" 
-                        value={this.state.phoneNumber}
-                        onChange={this.handlePhoneChange}>
-                    </input>
-                    <label>E-mail:</label>
-                    <input 
-                        type="text" 
-                        placeholder="Enter customer's e-mail" 
-                        value={this.state.email}
-                        onChange={this.handleEmailChange}>
-                    </input>
+                <input
+                    type="text"
+                    placeholder="Enter customer's name"
+                    value={this.state.name}
+                    onChange={this.handleNameChange}>
+                </input>
+                <label>Phone Number:</label>
+                <input
+                    type="text"
+                    placeholder="Enter customer's phone number"
+                    value={this.state.phoneNumber}
+                    onChange={this.handlePhoneChange}>
+                </input>
+                <label>E-mail:</label>
+                <input
+                    type="text"
+                    placeholder="Enter customer's e-mail"
+                    value={this.state.email}
+                    onChange={this.handleEmailChange}>
+                </input>
             </form>
         )
     }
-
 }
 
 export default EditCustomer;
