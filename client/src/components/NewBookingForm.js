@@ -178,19 +178,18 @@ class NewBooking extends Component {
                     <h3>Available Tables</h3>
                 </div>
 
-                <div>
-                <ul>
+                <div className="table-display">
+                {/* <ul> */}
                     {
                         this.state.tables.map(table => {
                             return (
-                                    <li onClick={this.handleClickTable} key={table.id} value={table.id}>
+                                    <p onClick={this.handleClickTable} key={table.id} value={table.id}>
                                         {table.name}
-                                    </li>
+                                    </p>
                             )
                         })
                     }
-                </ul>
-                    {/* <TablesGrid  tables={this.state.tables}/> */}
+                {/* </ul> */}
                     
                 </div>
 

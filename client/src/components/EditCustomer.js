@@ -16,7 +16,7 @@ class EditCustomer extends Component {
     render () {
         if (!this.props.selectedCustomer) return null;
         return(
-            <form className="booking-form">
+            <form className="edit-cust-form">
                 <label>Name:</label>
                     <input 
                         type="text" 

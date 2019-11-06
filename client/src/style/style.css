@@ -44,6 +44,19 @@ li {
     font-weight: 700;
 }
 
+.table-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.table-display p:hover {
+    border-top: 4px solid #7bdad5;
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .body {
     background-color: #e0e7e9;
     margin: 90px auto;
@@ -78,6 +91,21 @@ li {
 
 }
 
+.edit-cust-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.edit-cust-form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
 .date-time-picker {
     display: flex;
     justify-content: space-around;
@@ -98,6 +126,7 @@ li {
 .calendar-date-picker {
     margin: 40px auto;
     z-index: 999999999999;
+    width: 70%;
 }
 
 .label-picker {

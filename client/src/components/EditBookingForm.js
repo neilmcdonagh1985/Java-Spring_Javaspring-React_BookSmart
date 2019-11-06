@@ -145,7 +145,7 @@ class EditBookingForm extends Component {
                         onChange={this.handleNumOfGuestsChange}>
                     </input>
                 </div>
-                <div>
+                <div className="butt-book-form" >
                     <button onClick={ (event) => this.submitBookingChanges(event) }>Submit changes</button>
                 </div>
             </form>
