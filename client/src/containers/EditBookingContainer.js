@@ -9,10 +9,24 @@ class EditBookingContainer extends Component {
             selectedBooking: null
         }
         this.handleSelect = this.handleSelect.bind(this);
+        this.handleBookingEdit = this.handleBookingEdit.bind(this);
     }
 
     handleSelect(event) {
         this.setState({ selectedBooking: this.props.bookings[event.target.value] });
+    }
+
+    handleBookingEdit(updatedBookingDetail) {
+        fetch(`http://localhost:8080/bookings/${this.state.selectedBooking.id}`, {
+            method: "PUT",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedBookingDetail),
+        })
+        .then(res => res.json())
+        .then(updatedBooking => this.props.onBookingUpdated(updatedBooking));
     }
 
     render() {
@@ -37,7 +51,7 @@ class EditBookingContainer extends Component {
                     </ul>
                 </div>
                 <div>
-                    {this.state.selectedBooking && <EditBookingForm selectedBooking={this.state.selectedBooking} key={this.state.selectedBooking.id} />}
+                    {this.state.selectedBooking && <EditBookingForm selectedBooking={this.state.selectedBooking} onBookingEdit={this.handleBookingEdit} key={this.state.selectedBooking.id} />}
                 </div>
             </Fragment>
         );

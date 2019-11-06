@@ -17,6 +17,7 @@ class Main extends Component {
         }
         this.fetchAllBookings = this.fetchAllBookings.bind(this);
         this.addNewBooking = this.addNewBooking.bind(this);
+        this.updateBooking = this.updateBooking.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +38,18 @@ class Main extends Component {
         })
     }
 
+    updateBooking(updatedBooking) {
+        this.setState(prevState => {
+            return {
+                data: prevState.data.map(booking => {
+                    if (booking.id === updatedBooking.id) return updatedBooking
+                    return booking
+                })
+            }
+        })
+
+    }
+
     render() {
         return (
             <Router>
@@ -45,7 +58,7 @@ class Main extends Component {
                     <Switch>
                         <Route path="/bookings" render={() => <Calendar bookingsData={this.state.data} />} />
                         <Route path="/new-booking" render={() => <BookingContainer onNewBookingAdded={this.addNewBooking} /> } />
-                        <Route path="/edit-booking" render={() => <EditBookingContainer bookings={this.state.data} />} />
+                        <Route path="/edit-booking" render={() => <EditBookingContainer bookings={this.state.data} onBookingUpdated={this.updateBooking} />} />
                         <Route path="/customers" component={CustomersList} />
                     </Switch>
                 </Fragment>

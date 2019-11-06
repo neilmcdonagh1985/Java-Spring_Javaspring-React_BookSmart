@@ -5,8 +5,6 @@ import { ViewState } from "@devexpress/dx-react-scheduler";
 import { Scheduler, Appointments, DayView } from "@devexpress/dx-react-scheduler-material-ui";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
-// import { appointments } from "./BookingsData";
-// import BookingData from './BookingsData';
 
 const theme = createMuiTheme({ palette: { type: "light", primary: blue } });
 
@@ -24,7 +22,6 @@ class Calendar extends React.PureComponent {
 
     render() {
         // console.log(this.state.bookingsData[0] && this.state.bookingsData[0].date);
-
         const bookingsData = [...this.props.bookingsData];
         // Map bookingsData to new array
         const calendarObjects = bookingsData.map(booking => {
@@ -36,10 +33,6 @@ class Calendar extends React.PureComponent {
                 endDate: this.formatDateTime(booking.date, booking.endTime)
             }
         })
-        // Each element has startTime and EndTime replaced with result of formatDateTime(booking.date,booking.time)
-        // Use result in Scheduler below
-
-        // booking.startDate = formatDateTime(booking.date, booking.startTime)
 
         return (
             <div className="calendar">
@@ -56,7 +49,5 @@ class Calendar extends React.PureComponent {
         );
     }
 }
-
-// render(<Calendar />, document.getElementById("root"));
 
 export default Calendar;

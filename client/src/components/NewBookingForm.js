@@ -231,7 +231,7 @@ class NewBooking extends Component {
                 <div className="butt-book-form">
                     <button
                         
-                        onClick={(event) => { if (window.confirm('confirm?')) this.submitItem(event) } }>
+                        onClick={ (event) => this.submitItem(event) }>
                         Confirm Booking Details?
                     </button>
                 </div>

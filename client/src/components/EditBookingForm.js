@@ -13,17 +13,13 @@ class EditBookingForm extends Component {
             date: new Date(selectedBooking.date),
             startTime: new Date(selectedBooking.date + 'T' + selectedBooking.startTime),
             endTime: new Date(selectedBooking.date + 'T' + selectedBooking.endTime),
-            // name: "",
-            // phoneNumber: "",
-            // email: "",
             numOfGuests: selectedBooking.numOfGuests,
-            // tables: [],
-            // availableTables: []
         };
         this.handleNumOfGuestsChange = this.handleNumOfGuestsChange.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.handleStartTime = this.handleStartTime.bind(this);
         this.handleEndTime = this.handleEndTime.bind(this);
+        this.submitBookingChanges = this.submitBookingChanges.bind(this);
     }
 
     // static getDerivedStateFromProps(nextProps, prevState) {
@@ -85,6 +81,15 @@ class EditBookingForm extends Component {
         });
     };
 
+    submitBookingChanges(event) {
+        event.preventDefault();
+        const date = this.formatDate(this.state.date);
+        const startTime = this.formatTime(this.state.startTime);
+        const endTime = this.formatTime(this.state.endTime);
+        const numOfGuests = this.state.numOfGuests;
+        this.props.onBookingEdit({ date, startTime, endTime, numOfGuests });
+    }
+
     render() {
         if (!this.props.selectedBooking) return null;
         return(
@@ -139,9 +144,10 @@ class EditBookingForm extends Component {
                         value={this.state.numOfGuests}
                         onChange={this.handleNumOfGuestsChange}>
                     </input>
-
-
-                    </div>
+                </div>
+                <div>
+                    <button onClick={ (event) => this.submitBookingChanges(event) }>Submit changes</button>
+                </div>
             </form>
           
             
