@@ -24,6 +24,7 @@ class EditBookingForm extends Component {
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.handleStartTime = this.handleStartTime.bind(this);
         this.handleEndTime = this.handleEndTime.bind(this);
+        
     }
 
     // static getDerivedStateFromProps(nextProps, prevState) {
@@ -142,6 +143,8 @@ class EditBookingForm extends Component {
 
 
                     </div>
+                    
+                    <button>Confirm Edit</button>
             </form>
           
             
