@@ -6,13 +6,19 @@ class CustomersList extends Component {
         super(props);
         this.state = {
             customersData: []
+        
         }
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
         fetch('http://localhost:8080/customers/bookings/customer-visits')
             .then(response => response.json())
             .then(jsonData => this.setState({ customersData: jsonData }));
+    }
+
+    handleClick(event) {
+
     }
 
     render() {
@@ -24,6 +30,7 @@ class CustomersList extends Component {
                         <th>Phone Number</th>
                         <th>E-mail</th>
                         <th>Number of Bookings</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,6 +40,9 @@ class CustomersList extends Component {
                             <td key={i}>{customer.phoneNumber}</td>
                             <td key={i}>{customer.email}</td>
                             <td key={i}>{customer.bookings.length}</td>
+                            <td>
+                            <button onlick={this.handleClick}>Edit</button>
+                            </td>
                         </tr>
                     )}
                 </tbody>
