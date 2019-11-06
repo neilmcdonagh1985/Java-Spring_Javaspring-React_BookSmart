@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from 'react';
+import EditCustomer from './EditCustomer'
 
 class CustomersList extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            customersData: []
+            customersData: [],
+            selectedCustomer: null
         
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.handleEditCust = this.handleEditCust.bind(this);
     }
 
     componentDidMount() {
@@ -17,36 +19,43 @@ class CustomersList extends Component {
             .then(jsonData => this.setState({ customersData: jsonData }));
     }
 
-    handleClick(event) {
-
+    handleEditCust(event) {
+        this.setState({ selectedCustomer: this.state.customersData[event.target.value]})
     }
 
     render() {
         return (
-            <table className="cust-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Phone Number</th>
-                        <th>E-mail</th>
-                        <th>Number of Bookings</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.customersData.map((customer, i) =>
-                        <tr key={i}>
-                            <td key={i}>{customer.name}</td>
-                            <td key={i}>{customer.phoneNumber}</td>
-                            <td key={i}>{customer.email}</td>
-                            <td key={i}>{customer.bookings.length}</td>
-                            <td>
-                            <button onlick={this.handleClick}>Edit</button>
-                            </td>
+            <Fragment>
+                <table className="cust-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>E-mail</th>
+                            <th>Number of Bookings</th>
+                            <th>Edit</th>
                         </tr>
-                    )}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {this.state.customersData.map((customer, i) =>
+                            <tr key={i}>
+                                <td >{customer.name}</td>
+                                <td >{customer.phoneNumber}</td>
+                                <td >{customer.email}</td>
+                                <td >{customer.bookings.length}</td>
+                                <td>
+                                <button value={i} onClick={this.handleEditCust}>Edit</button>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+                <div>
+                    {this.state.selectedCustomer && 
+                    <EditCustomer selectedCustomer={this.state.selectedCustomer} 
+                    key={this.state.selectedCustomer.id} />}
+                </div>
+            </Fragment>
         );
     } 
         
