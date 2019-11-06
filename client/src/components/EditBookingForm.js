@@ -93,7 +93,7 @@ class EditBookingForm extends Component {
     render() {
         if (!this.props.selectedBooking) return null;
         return(
-             <form className="booking-form">
+            <form className="booking-form">
 
                 <div className="date-time-picker">
                     <div className="label-picker">
@@ -140,7 +140,6 @@ class EditBookingForm extends Component {
                     <input
                         type="number"
                         placeholder="Enter number of guests"
-                        // value={this.state.numOfGuests}
                         value={this.state.numOfGuests}
                         onChange={this.handleNumOfGuestsChange}>
                     </input>
@@ -149,7 +148,6 @@ class EditBookingForm extends Component {
                     <button onClick={ (event) => this.submitBookingChanges(event) }>Submit changes</button>
                 </div>
             </form>
-          
             
             )
     }

@@ -33,7 +33,13 @@ class EditBookingContainer extends Component {
         return (
             <Fragment>
                 <div>
-                    {this.state.selectedBooking && <EditBookingForm selectedBooking={this.state.selectedBooking} onBookingEdit={this.handleBookingEdit} key={this.state.selectedBooking.id} />}
+                    {this.state.selectedBooking && 
+                        <EditBookingForm 
+                            selectedBooking={this.state.selectedBooking}
+                            onBookingEdit={this.handleBookingEdit}
+                            key={this.state.selectedBooking.id}
+                        />
+                    }
                 </div>
                 
                 <table className="cust-table">

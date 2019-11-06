@@ -35,11 +35,10 @@ class Calendar extends React.PureComponent {
         // Map bookingsData to new array
         const calendarObjects = bookingsData.map(booking => {
             return {
-                title: booking["_embedded"].customer.name,
+                title: `${booking["_embedded"].customer.name} - ${booking["_embedded"].mesa.name}`,
                 startDate: this.formatDateTime(booking.date, booking.startTime),
                 endDate: this.formatDateTime(booking.date, booking.endTime),
                 id: booking.id,
-                location: booking["_embedded"].mesa.name
             }
         })
 

@@ -7,10 +7,37 @@ class EditCustomer extends Component {
         const { selectedCustomer } = props
 
         this.state = {
+            id: selectedCustomer.id,
             name: selectedCustomer.name,
             phoneNumber: selectedCustomer.phoneNumber,
             email: selectedCustomer.email
         }
+    }
+
+    handleNameChange = (e) => {
+        this.setState({
+            name: e.target.value
+        });
+    };
+    handlePhoneChange = (e) => {
+        this.setState({
+            phoneNumber: e.target.value
+        });
+    };
+
+    handleEmailChange = (e) => {
+        this.setState({
+            email: e.target.value
+        });
+    };
+
+    submitCustomerChanges(event) {
+        event.preventDefault();
+        const id = this.state.id
+        const name = this.state.name;
+        const phoneNumber = this.state.phoneNumber;
+        const email = this.state.email;
+        this.props.onEditCustomer({ id, name, phoneNumber, email });
     }
 
     render () {
@@ -38,6 +65,9 @@ class EditCustomer extends Component {
                         value={this.state.email}
                         onChange={this.handleEmailChange}>
                     </input>
+                <div className="butt-book-form" >
+                    <button onClick={ (event) => this.submitCustomerChanges(event) }>Submit changes</button>
+                </div>
             </form>
         )
     }

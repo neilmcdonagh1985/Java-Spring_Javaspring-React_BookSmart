@@ -229,7 +229,6 @@ class NewBooking extends Component {
                 </div>
                 <div className="butt-book-form">
                     <button
-                        
                         onClick={ (event) => this.submitItem(event) }>
                         Confirm Booking Details?
                     </button>
