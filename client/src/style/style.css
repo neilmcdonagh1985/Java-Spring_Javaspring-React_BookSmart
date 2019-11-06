@@ -44,6 +44,19 @@ li {
     font-weight: 700;
 }
 
+.table-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.table-display p:hover {
+    border-top: 4px solid #7bdad5;
+    font-weight: 700;
+    font-size: 20px;
+}
+
 .body {
     background-color: #e0e7e9;
 }
