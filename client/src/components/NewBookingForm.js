@@ -119,9 +119,6 @@ class NewBooking extends Component {
     }
 
     render() {
-        console.log('date',this.formatDate(this.state.date))
-        console.log('time format',this.formatTime(this.state.startTime))
-        console.log('time',this.state.startTime)
         return (
             <form className="booking-form">
                 <div className="form-title">
@@ -175,9 +172,9 @@ class NewBooking extends Component {
                     {
                         this.state.tables.map(table => {
                             return (
-                                    <li onClick={this.handleClickTable} key={table.id} value={table.id}>
-                                        {table.name}
-                                    </li>
+                                <li onClick={this.handleClickTable} key={table.id} value={table.id}>
+                                    {table.name}
+                                 </li>
                             )
                         })
                     }

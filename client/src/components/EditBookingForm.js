@@ -134,7 +134,6 @@ class EditBookingForm extends Component {
                     <input
                         type="number"
                         placeholder="Enter number of guests"
-                        // value={this.state.numOfGuests}
                         value={this.state.numOfGuests}
                         onChange={this.handleNumOfGuestsChange}>
                     </input>
