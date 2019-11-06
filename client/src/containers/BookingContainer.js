@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NewBookingForm from '../components/NewBookingForm';
+import Calendar from '../components/Calendar';
 // import '../../public/style/style';
 
 class BookingContainer extends Component {
@@ -11,10 +12,40 @@ class BookingContainer extends Component {
         }
     }
 
+    handleBookingSubmit(formDetail) {
+        fetch("http://localhost:8080/customers", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json", 
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formDetail), 
+        })
+        .then(res => res.json())
+        .then(customer => {
+            fetch("http://localhost:8080/bookings", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json", 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    customer: `http://localhost:8080/customers/${customer.id}`,
+                    mesa: `http://localhost:8080/mesas/${formDetail.selectedTableId}`,
+                    date: formDetail.date,
+                    startTime: formDetail.startTime,
+                    endTime: formDetail.endTime,
+                    numOfGuests: formDetail.numOfGuests
+                }), 
+            })
+        })
+    }
+
     render() {
         return(
             <div className="booking-cont">
-                <NewBookingForm/>
+                <NewBookingForm onBookingSubmit={this.handleBookingSubmit}/>
+                {/* <Calendar data={this.state.data} /> */}
             </div>
         )
     }
