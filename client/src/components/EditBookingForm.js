@@ -144,10 +144,18 @@ class EditBookingForm extends Component {
                         value={this.state.numOfGuests}
                         onChange={this.handleNumOfGuestsChange}>
                     </input>
+<<<<<<< HEAD
                 </div>
                 <div>
                     <button onClick={ (event) => this.submitBookingChanges(event) }>Submit changes</button>
                 </div>
+=======
+
+
+                    </div>
+                    
+                    <button>Confirm Edit</button>
+>>>>>>> develop
             </form>
           
             
