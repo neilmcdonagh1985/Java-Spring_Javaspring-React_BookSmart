@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import CustomersListItem from './CustomersListItem';
+import React, { Component, Fragment } from 'react';
 
 class CustomersList extends Component {
 
@@ -11,22 +10,34 @@ class CustomersList extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/customers')
+        fetch('http://localhost:8080/customers/bookings/customer-visits')
             .then(response => response.json())
-            .then(jasonData => this.setState({customersData: jasonData['_embedded'].customers}));
+            .then(jsonData => this.setState({ customersData: jsonData }));
     }
 
     render() {
 
         return (
-            <div className="cust-list">
-                <CustomersListItem customers={this.state.customersData}/>
-                
-            </div>
-            
+            <Fragment>
+                <div className="cust-list">
+                    <ul>
+                        {this.state.customersData.map(customer => {
+                            return (
+                                <div>
+                                    <li key={customer.id}>{customer.name}</li>
+                                    <li key={customer.id}>{customer.phoneNumber}</li>
+                                    <li key={customer.id}>{customer.email}</li>
+                                    <li key={customer.id}>{customer.bookings.length}</li>
+                                </div>
+                            )
+                        })
+                        }
+                    </ul>
+                    {/* <CustomersListItem customers={this.state.customersData}/> */}
+                </div>
+            </Fragment>
         )
     }
-
 }
 
 export default CustomersList;
