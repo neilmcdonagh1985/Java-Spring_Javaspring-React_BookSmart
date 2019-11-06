@@ -26,6 +26,11 @@ class CustomersList extends Component {
     render() {
         return (
             <Fragment>
+                <div>
+                    {this.state.selectedCustomer && 
+                    <EditCustomer selectedCustomer={this.state.selectedCustomer} 
+                    key={this.state.selectedCustomer.id} />}
+                </div>
                 <table className="cust-table">
                     <thead>
                         <tr>
@@ -50,11 +55,7 @@ class CustomersList extends Component {
                         )}
                     </tbody>
                 </table>
-                <div>
-                    {this.state.selectedCustomer && 
-                    <EditCustomer selectedCustomer={this.state.selectedCustomer} 
-                    key={this.state.selectedCustomer.id} />}
-                </div>
+                
             </Fragment>
         );
     } 

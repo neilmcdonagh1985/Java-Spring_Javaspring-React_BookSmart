@@ -33,28 +33,40 @@ class EditBookingContainer extends Component {
         return (
             <Fragment>
                 <div>
-                    <ul>
-                        {
-                            this.props.bookings.map((booking, index) => {
-                                return (
-                                    <div>
-                                        <li key={booking.id}>
-                                            {booking['_embedded'].customer.name} <br />
-                                            {booking.date} <br />
-                                            {booking.startTime} <br /><br />
-                                        </li>
-                                        <button onClick={this.handleSelect} value={index}>Edit</button>
-                                    </div>
-                                )
-                            })
-                        }
-                    </ul>
-                </div>
-                <div>
                     {this.state.selectedBooking && <EditBookingForm selectedBooking={this.state.selectedBooking} onBookingEdit={this.handleBookingEdit} key={this.state.selectedBooking.id} />}
                 </div>
+                
+                <table className="cust-table">
+                    <thead>
+                        <tr>
+                            <th>Customer's Name</th>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Number of Guests</th>
+                            <th>Table</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.bookings.map((booking, i) =>
+                            <tr key={i}>
+                                <td >{booking['_embedded'].customer.name}</td>
+                                <td >{booking.date} </td>
+                                <td >{booking.startTime}</td>
+                                <td >{booking.endTime}</td>
+                                <td >{booking.numOfGuests}</td>
+                                <td >{booking[`_embedded`].mesa.name}</td>
+                                <td>
+                                <button onClick={this.handleSelect} value={i}>Edit</button>                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
+                
+            
             </Fragment>
-        );
+        )
     }
 }
 
