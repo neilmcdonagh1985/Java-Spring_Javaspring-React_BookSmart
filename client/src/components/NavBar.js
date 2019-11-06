@@ -5,8 +5,9 @@ import {Link} from 'react-router-dom';
 const NavBar = () => (
 
     <ul className="nav-bar">
+            <li>BookSmart</li>
             <li>
-                <Link to='/bookings'>Calendar</Link>
+                <Link to='/bookings'>Today's Bookings</Link>
             </li>
             <li>
                 <Link to='/new-booking'>New Booking</Link>

@@ -2,9 +2,7 @@ import React from 'react';
 
 const CustomerDetail = ({customers}) => {
 
-    
         return customers.map((customer) => {
-            console.log(customers)
             return (
                 <ul>
                     <li key={customer.id}>{customer.name}</li>
@@ -13,11 +11,6 @@ const CustomerDetail = ({customers}) => {
                 </ul>
             )
         });
-    
-
-    
-
-    
 
 }
 
