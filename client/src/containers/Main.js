@@ -15,13 +15,26 @@ class Main extends Component {
         this.state = {
             data: []
         }
+        this.fetchAllBookings = this.fetchAllBookings.bind(this);
+        this.addNewBooking = this.addNewBooking.bind(this);
     }
 
     componentDidMount() {
+        this.fetchAllBookings()
+    }
+
+    fetchAllBookings() {
         fetch('http://localhost:8080/bookings')
             .then(response => response.json())
             .then(jsonData => this.setState({ data: jsonData['_embedded'].bookings }));
-        console.log("booking data;", this.state.data);
+    }
+
+    addNewBooking(booking) {
+        this.setState(prevState => {
+            return {
+                data: [...prevState.data, booking]
+            }
+        })
     }
 
     render() {
@@ -30,8 +43,8 @@ class Main extends Component {
                 <Fragment>
                     <NavBar />
                     <Switch>
-                        <Route path="/bookings" component={Calendar}/>
-                        <Route path="/new-booking" component={BookingContainer} />
+                        <Route path="/bookings" render={() => <Calendar bookingsData={this.state.data} />} />
+                        <Route path="/new-booking" render={() => <BookingContainer onNewBookingAdded={this.addNewBooking} /> } />
                         <Route path="/edit-booking" render={() => <EditBookingContainer bookings={this.state.data} />} />
                         <Route path="/customers" component={CustomersList} />
                     </Switch>

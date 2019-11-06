@@ -14,43 +14,38 @@ class Calendar extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            bookingsData: [
-
-            ]
+            
         };
     }
 
     formatDateTime(date, time) {
-        const a = new Date(date)
-        let month = '' + (a.getMonth() - 1)
-        if (month.length < 2) { month = '0' + month }
-        let day = '' + a.getDate()
-        if (day.length < 2) { day = '0' + day }
-        let year = a.getFullYear()
-        const b = new Date(time)
-        let hour = '' + (b.getHours())
-        if (hour.length < 2) { hour = '0' + hour }
-        let minutes = '' + b.getMinutes()
-        if (minutes.length < 2) { minutes = '0' + minutes }
-        return [year, month, day, hour, minutes].join(', ');
-    }
-
-    componentDidMount() {
-        fetch('http://localhost:8080/bookings')
-            .then(response => response.json())
-            .then(jsonData => this.setState({ bookingsData: jsonData['_embedded'].bookings }));
+        return new Date(date + "T" + time)
     }
 
     render() {
         // console.log(this.state.bookingsData[0] && this.state.bookingsData[0].date);
 
-        const { bookingsData } = this.state;
+        const bookingsData = [...this.props.bookingsData];
+        // Map bookingsData to new array
+        const calendarObjects = bookingsData.map(booking => {
+            return {
+                id: booking.id,
+                title: booking["_embedded"].customer.name,
+                location: booking["_embedded"].mesa.name,
+                startDate: this.formatDateTime(booking.date, booking.startTime),
+                endDate: this.formatDateTime(booking.date, booking.endTime)
+            }
+        })
+        // Each element has startTime and EndTime replaced with result of formatDateTime(booking.date,booking.time)
+        // Use result in Scheduler below
+
+        // booking.startDate = formatDateTime(booking.date, booking.startTime)
 
         return (
             <div className="calendar">
                 <MuiThemeProvider theme={theme}>
                     <Paper>
-                        <Scheduler data={bookingsData}>
+                        <Scheduler data={calendarObjects}>
                             <ViewState currentDate={new Date()} />
                             <DayView startDayHour={12} endDayHour={23} />
                             <Appointments />

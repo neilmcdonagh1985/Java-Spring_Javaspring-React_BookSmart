@@ -10,6 +10,7 @@ class BookingContainer extends Component {
         this.state={
             data: []
         }
+        this.handleBookingSubmit = this.handleBookingSubmit.bind(this);
     }
 
     handleBookingSubmit(formDetail) {
@@ -36,8 +37,10 @@ class BookingContainer extends Component {
                     startTime: formDetail.startTime,
                     endTime: formDetail.endTime,
                     numOfGuests: formDetail.numOfGuests
-                }), 
+                }) 
             })
+            .then(res => res.json())
+            .then(booking => this.props.onNewBookingAdded(booking))
         })
     }
 
