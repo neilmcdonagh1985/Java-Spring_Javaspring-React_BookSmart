@@ -16,28 +16,31 @@ class CustomersList extends Component {
     }
 
     render() {
-
         return (
-            <Fragment>
-                <div className="cust-list">
-                    <ul>
-                        {this.state.customersData.map(customer => {
-                            return (
-                                <div>
-                                    <li key={customer.id}>{customer.name}</li>
-                                    <li key={customer.id}>{customer.phoneNumber}</li>
-                                    <li key={customer.id}>{customer.email}</li>
-                                    <li key={customer.id}>{customer.bookings.length}</li>
-                                </div>
-                            )
-                        })
-                        }
-                    </ul>
-                    {/* <CustomersListItem customers={this.state.customersData}/> */}
-                </div>
-            </Fragment>
-        )
-    }
+            <table className="cust-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>E-mail</th>
+                        <th>Number of Bookings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {this.state.customersData.map((customer, i) =>
+                        <tr key={i}>
+                            <td key={i}>{customer.name}</td>
+                            <td key={i}>{customer.phoneNumber}</td>
+                            <td key={i}>{customer.email}</td>
+                            <td key={i}>{customer.bookings.length}</td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+        );
+    } 
+        
+    
 }
 
 export default CustomersList;
