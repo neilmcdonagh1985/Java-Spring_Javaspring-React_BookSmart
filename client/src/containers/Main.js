@@ -5,7 +5,7 @@ import BookingContainer from './BookingContainer';
 import CustomersList from '../components/CustomersList';
 import Calendar from '../components/Calendar';
 import EditBookingContainer from './EditBookingContainer';
-// import '../public/style/style.css';
+import HomePage from '../components/HomePage';
 import '../style/style.css';
 
 class Main extends Component {
@@ -56,6 +56,7 @@ class Main extends Component {
                 <Fragment>
                     <NavBar />
                     <Switch>
+                        <Route exact path="/" component={HomePage} />
                         <Route path="/bookings" render={() => <Calendar bookingsData={this.state.data} />} />
                         <Route path="/new-booking" render={() => <BookingContainer onNewBookingAdded={this.addNewBooking} /> } />
                         <Route path="/edit-booking" render={() => <EditBookingContainer bookings={this.state.data} onBookingUpdated={this.updateBooking} />} />

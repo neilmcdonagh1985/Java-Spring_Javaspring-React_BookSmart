@@ -2,8 +2,6 @@ import React from 'react';
 
 const TablesGrid = ({tables}) => {
 
-    
-
     handleClickTable(event) {
         const selectedTable = event.target.value;
 

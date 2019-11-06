@@ -8,7 +8,6 @@ class CustomersList extends Component {
         this.state = {
             customersData: [],
             selectedCustomer: null
-        
         }
         this.handleEditCust = this.handleEditCust.bind(this);
     }
