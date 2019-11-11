@@ -17,11 +17,13 @@ The bookings and customers are saved to the database and accessable on the app t
 ## To Install ##
 
 create db booksmart
+
 run npm install in client and server folders
 
 ## To Run ##
 
 In 'server' folder: npm run serve
+
 In client folder: npm start
 
 
