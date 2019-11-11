@@ -4,6 +4,11 @@ The user in mind would possibly be using the app whilst talking on the phone to 
 
 <img width="1077" alt="Screenshot 2019-11-11 at 14 19 16" src="https://user-images.githubusercontent.com/51781302/68594271-19ecb880-048f-11ea-9dff-94f3a5997a85.png">
 
+The user can add a new booking and customer with this form:
+
+<img width="1079" alt="Screenshot 2019-11-11 at 14 28 33" src="https://user-images.githubusercontent.com/51781302/68594584-c4fd7200-048f-11ea-9615-4edeff705d32.png">
+
+
 
 
 
