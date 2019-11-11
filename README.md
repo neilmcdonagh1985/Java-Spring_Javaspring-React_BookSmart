@@ -10,6 +10,8 @@ The user can add a new booking and customer with this form:
 
 The bookings and customers are saved to the database and accessable on the app to the user:
 
+<img width="1063" alt="Screenshot 2019-11-11 at 14 32 09" src="https://user-images.githubusercontent.com/51781302/68595026-a055ca00-0490-11ea-9468-ea81031af7bd.png">
+
 
 
 
